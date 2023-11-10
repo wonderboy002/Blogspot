@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.loginbtn{
+    transition-property: all;
+    transition-duration: 500;
+}
+
+.loginbtn:hover{
+    border-radius: 9999px;
+    /* transform: scale(1.1); */
+}
+.slug{
+    border: 2px solid black;
+}
+
+.home-title{
+    font-family: 'Cedarville Cursive', cursive;
+}
