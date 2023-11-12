@@ -10,9 +10,6 @@ import usetheme from "../../Context/Theme";
 function Header() {
   const authStatus = useSelector((state) => state.auth.logged);
 
-
-
-
   const [menuToggle, setmenuToggle] = useState(false);
   useEffect(() => {
     console.log("this is auth Status", authStatus);
@@ -74,28 +71,32 @@ function Header() {
                 ) : null
               )}
 
-              <ThemeSwitch />
               {authStatus && <LogoutBtn />}
             </div>
-            <button
-              onClick={() => setmenuToggle(!menuToggle)}
-              className="hamburger-menu ml-auto shadow-md shadow-slate-400 p-2 rounded-full dark:text-white md:hidden block"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
+            <div className="flex ml-auto  items-center">
+            <ThemeSwitch />
+              <button
+                onClick={() => setmenuToggle(!menuToggle)}
+                className="hamburger-menu ml-auto shadow-md shadow-slate-400 p-2 rounded-full dark:text-white md:hidden block"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-                />
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                  />
+                </svg>
+              </button>
+           
+            </div>
+
             {menuToggle && (
               <Drawer anchor="top" open={menuToggle} onClose={setmenuToggle}>
                 {/* Content of the drawer goes here */}
@@ -131,6 +132,7 @@ function Header() {
                       </div>
                     ) : null
                   )}
+
                   <div className="mx-auto">{authStatus && <LogoutBtn />}</div>
                 </div>
               </Drawer>

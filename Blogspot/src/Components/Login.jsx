@@ -45,7 +45,7 @@ export default function Login() {
         Don't have an account ??{" "}
         <Link
           to="/Signup"
-          className="font-bold p-2 rounded-full dark:bg-blue-600 dark:text-white text-blue-700  hover:text--blue-400"
+          className="font-bold p-1 rounded-full underline dark:text-white text-blue-700  hover:text--blue-400"
         >
           Sign up Here
         </Link>
