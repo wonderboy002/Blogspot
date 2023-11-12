@@ -39,7 +39,7 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="py-8">
+        <div className="py-8 flex flex-col gap-4 dark:bg-sapphire">
             <Container>
                 <div className="w-full flex flex-col items-center justify-center mb-4 relative border rounded-xl p-2">
                     <img
@@ -61,10 +61,10 @@ export default function Post() {
                         </div>
                     )}
                 </div>
-                <div className="w-full mb-6">
+                <div className="w-full mb-6 dark:text-white">
                     <h1 className="text-2xl font-bold">{post.title}</h1>
                 </div>
-                <div className="browser-css">
+                <div className="browser-css dark:text-white">
                     {parse(post.Realcontent)}
                     </div>
             </Container>

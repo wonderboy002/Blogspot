@@ -14,14 +14,17 @@ import LoginPage from "./Pages/LoginPage.jsx";
 import Post from "./Pages/Post.jsx";
 import Layout from "./Layout.jsx";
 import Home from "./Pages/Home.jsx";
+import { ThemeProvider } from "./Context/Theme.js";
+import usetheme from "./Context/Theme.js";
+import { useState } from "react";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
       {
-         path : "/",
-         element : <Home/>
+        path: "/",
+        element: <Home />,
       },
       {
         path: "/Login",
@@ -41,11 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/EditPost/:slug",
-        element: (
-         
-            <EditPost />
-     
-        ),
+        element: <EditPost />,
       },
       {
         path: "/post/:slug",
@@ -57,8 +56,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+ 
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+
   </React.StrictMode>
 );

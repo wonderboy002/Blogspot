@@ -6,9 +6,13 @@ import { useNavigate } from "react-router-dom";
 import ThemeSwitch from "./ThemeSwitch";
 import HamMenu from "../HamMenu";
 import Drawer from "@mui/material/Drawer";
-
+import usetheme from "../../Context/Theme";
 function Header() {
   const authStatus = useSelector((state) => state.auth.logged);
+
+
+
+
   const [menuToggle, setmenuToggle] = useState(false);
   useEffect(() => {
     console.log("this is auth Status", authStatus);
@@ -45,14 +49,15 @@ function Header() {
       active: authStatus,
     },
   ];
+
   return (
     <div>
-      <header className="shadow-md mb-4 w-full shadow-slate-200">
+      <header className="w-full bg-indigo-900 shadow-slate-200">
         <Container>
           <nav className="navitems w-full flex gap-4 items-center">
             <img
               src="https://static.vecteezy.com/system/resources/previews/007/728/084/non_2x/inspirational-handwritten-brush-lettering-blog-calligraphy-illustration-isolated-on-white-background-typography-for-banners-badges-postcard-tshirt-prints-posters-vector.jpg"
-              className="logo w-[100px] h-[65px]"
+              className="logo w-[100px] rounded-full h-[65px]"
               alt=""
             />
             <div className="md:flex md:items-center hidden ml-auto gap-4">
@@ -61,7 +66,7 @@ function Header() {
                   <div key={item.name}>
                     <Link
                       to={item.url}
-                      className="text-black font-bold duration-300 hover:bg-emerald-400 p-3 hover:rounded-full"
+                      className="text-white font-bold duration-300 hover:bg-emerald-400 dark:hover:bg-emerald-600 hover:text-black p-3 hover:rounded-full"
                     >
                       {item.name}
                     </Link>
@@ -74,7 +79,7 @@ function Header() {
             </div>
             <button
               onClick={() => setmenuToggle(!menuToggle)}
-              className="hamburger-menu ml-auto shadow-md shadow-slate-400 p-2 rounded-full md:hidden block"
+              className="hamburger-menu ml-auto shadow-md shadow-slate-400 p-2 rounded-full dark:text-white md:hidden block"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -18,9 +18,8 @@ function AllPosts() {
   })
 
   return (
-    <div>
-      <Container>
-        <div className="flex flex-wrap gap-4">
+    <div className="w-full dark:bg-indigo-950 p-8">
+        <div className="flex  flex-wrap gap-4">
           {posts.map((post) => {
             return (
               <div key={post.$userid} className="p-3">
@@ -29,7 +28,6 @@ function AllPosts() {
             );
           })}
         </div>
-      </Container>
     </div>
   );
 }

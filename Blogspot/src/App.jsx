@@ -9,9 +9,10 @@ import SignupPage from "./Pages/SignupPage";
 import LoginPage from "./Pages/LoginPage";
 import RTE from "./Components/RTE";
 import AddPostPage from "./Pages/AddPostPage";
-
+import usetheme from "./Context/Theme";
 function App() {
   const [loading, setLoading] = useState(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,11 +33,9 @@ function App() {
         <div className="min-h-screen flex flex-col gap-6">
           <div className="main w-full block">
             <Header />
-            <SignupPage/>
+            <SignupPage />
             <Footer />
-           
           </div>
-         
         </div>
       ) : (
         <div>Loading....</div>
