@@ -18,8 +18,8 @@ function Home() {
 
   if (authStatus === false) {
     return (
-      <div className="flex dark:bg-indigo-950 p-28 flex-col items-center  gap-4">
-        <h1 className="text-4xl dark:text-white home-title font-extrabold">Login To read Posts or why don't You write some yourself</h1>
+      <div className="md:flex dark:bg-indigo-950 p-28 md:flex-col md:items-center  gap-4">
+        <h1 className="md:text-4xl text-xl mb-8 dark:text-white home-title font-extrabold">Login To read Posts or why don't You write some yourself</h1>
         <img
           src="https://cdn-icons-gif.flaticon.com/10971/10971307.gif"
           className="h-[500px] md:rounded-full"
